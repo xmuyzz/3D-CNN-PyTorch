@@ -1,11 +1,11 @@
-# 3D-CNN-PyTorch: PyTorch Implementation for 3D CNN Models for Medical Images Data
+# 3D-CNN-PyTorch: PyTorch Implementation for 3dCNNs for Medical Images
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
 
 Keywords: Deep Learning, 3D Convolutional Neural Networks, PyTorch, Medical Images, Gray Scale Images
 
 ## Update (2022/4/13)
 
-More 3dCNN models will be added.
+More 3dCNN models will be added shortly.
 
 ## Implemented models
 
@@ -24,8 +24,6 @@ More 3dCNN models will be added.
  - MobileNetV2
  - EfficientNet (b0-b9)
 
-## Results
-
 ## Repository Structure
 
 The repository is structured as follows:
@@ -34,7 +32,7 @@ All the models to run the deep-learning-based pipeline is found under the models
 
 ## Requirements
 
-* Python 3.8
+* Python 3.8.5
 * PyTorch 1.11.0
 
 ## Set-up
@@ -73,11 +71,7 @@ The virtual environment can be deactivated by running:
 deactivate
 ```
 
-## Model Inference
-
-The get data step takes care of the following operations:
-
-1. Run the code (`generate_model.py`) under the root path for 3D CNN model;
+## Run codes
 
 The model generation can be run by executing:
 
