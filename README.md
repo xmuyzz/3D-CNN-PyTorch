@@ -71,12 +71,13 @@ The virtual environment can be deactivated by running:
 deactivate
 ```
 
-## Run codes
+## Running the codes
 
 The model generation can be run by executing:
 
 ```
-python3 generate_model.py --cnn_name resnet --model_depth 101 --n_classes 2 --in_channels 1 sample_size 128
+python3 generate_model.py --cnn_name resnet --model_depth 101 --n_classes 2 \
+--in_channels 1 --sample_size 128
 ```
 
 ## Disclaimer
