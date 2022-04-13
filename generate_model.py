@@ -4,9 +4,11 @@ from models.cnn import cnn3d
 from models import (cnn, C3DNet, resnet, ResNetV2, ResNeXt, ResNeXtV2, WideResNet, PreActResNet,
         EfficientNet, DenseNet, ShuffleNet, ShuffleNetV2, SqueezeNet, MobileNet, MobileNetV2)
 
+from opts import parse_opts
 
 
-def get_cnn_model(cnn_name, model_depth, n_classes, in_channels, sample_size=96):
+
+def main(cnn_name, model_depth, n_classes, in_channels, sample_size):
  
     # simple CNN 
     if cnn_name == 'cnn':
@@ -184,14 +186,29 @@ def get_cnn_model(cnn_name, model_depth, n_classes, in_channels, sample_size=96)
             override_params={'num_classes': n_classes}, 
             in_channels=in_channels)
     
-
     if torch.cuda.is_available():
         model.cuda()
 
     return model
 
 
+if __name__ == '__main__':
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--manual_seed', default=1234, type=int, help='Mannual seed')
+    parser.add_argument('--cnn_name', default='ResNet', type=str, help='cnn model names')
+    parser.add_argument('--model_depth', default=101, type=str, help='model depth (18|34|50|101|152|200)')
+    parser.add_argument('--n_classes', default=2, type=str, help='model output classes')
+    parser.add_argument('--in_channels', default=1, type=str, help='model input channels (1|3)')
+    parser.add_argument('--sample_size', default=128, type=str, help='image size')
+    args = parser.parse_args()
+
+    model = main(cnn_name=args.cnn_name,
+                 model_depth=args.model_depth,
+                 n_classes=args.n_classes,
+                 in_channels=args.in_channels,
+                 sample_size=args.sample_sizes
+                )
 
 
 
